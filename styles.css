@@ -47,7 +47,8 @@ main {
 
 
 #output{
-    margin: 20px;
+    width: 300px;
+    margin: auto;
     display: block;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -58,12 +59,16 @@ main {
 }
 
 #output > p {
-    font-size: 10vw;
+    font-size: 2em;
     margin: 15px;
 }
 
+#output > .year {
+    font-size: 1em;
+}
+
 #output > img {
-    margin-bottom: 15px;
+    
 }
 
 /* footer */
