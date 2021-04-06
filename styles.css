@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+html {
+    height: 100%;
+    background: linear-gradient(to top, #D4D3DD, #EFEFBB);
+}
+
+body {
+   padding-bottom:60px;
+   font-family: 'Rajdhani', sans-serif;
+}
+
+main {
+    display: block;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    margin-top: 15%;    
+}
+
+#btn {
+    idth: 33%;
+    background-color: #8f8f70;
+    color: white;
+    padding: 10px;
+    margin: 25px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+}
+
+#output{
+    font-size: x-large;
+}
+
+/* footer */
+footer {
+    background: #0d253f;
+    position: absolute; 
+    display: flex;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-between; 
+    color:  #0d253f;
+    background: linear-gradient(to top, #0d253f, transparent);
+}
+
+#logo > img {
+    width: auto;  
+}
+#logo > p {
+    margin-bottom: 5px;
+}
+#platlab{
+    margin: 10px;
+}
+#platlab > p > a{
+    color:  #0d253f
+}
+/* end footer */
