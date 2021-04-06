@@ -23,6 +23,7 @@ main {
     display: block;
     text-align: center;
     width: 100%;
+    height: auto;
     align-self: center;
     margin-top: 8%;    
 }
@@ -47,11 +48,22 @@ main {
 
 #output{
     margin: 20px;
-    font-size: 10vw;
     display: block;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
+#output > p {
+    font-size: 10vw;
+    margin: 15px;
+}
+
 #output > img {
-    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 /* footer */
