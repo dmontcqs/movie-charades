@@ -1,24 +1,28 @@
-const insertId = () => {
-  const randomId = Math.floor(Math.random() * 500);
-  const webUrl = `https://api.themoviedb.org/3/movie/${randomId}?api_key=4e370cf87047d952e72f249f236f6e94&language=es`;
-  console.log(webUrl);
-  // const imageUrl = `https://api.themoviedb.org/3/movie/${randomId}/images?api_key=4e370cf87047d952e72f249f236f6e94&language=en-US`
-  // console.log(imageUrl);
-
-  getMovie(webUrl).then((movie) => {
-    const poster = movie.poster_path;
-    const title = movie.title;
-    const year = movie.release_date;
-    const country = movie.production_countries[0].name;
-
-    document.getElementById("output").innerHTML = `
-        <p>${title}</p>
-        <img src="https://image.tmdb.org/t/p/w185/${poster}" alt="movie-poster"></img>
-        <p class="year">${country}. (${year})</p>
-      `;
+const createMovieObject = () => {
+  getMovies().then((movie) => {
+    movieObj = {
+      poster: movie.poster_path,
+      title: movie.title,
+      year: movie.release_date,
+      country: movie.production_countries[0].name,
+    };
+    printMovieObj(movieObj);
   });
 };
 
-const getMovie = (webUrl) => {
-  return fetch(webUrl).then((response) => response.json());
+const printMovieObj = (movieObj) => {
+  document.getElementById("output").innerHTML = `
+       <p>${movieObj.title}</p>
+       <img src="https://image.tmdb.org/t/p/w185/${movieObj.poster}" alt="movie-poster"></img>
+       <p class="year">${movieObj.country}. (${movieObj.year})</p>
+     `;
+};
+
+const getMovies = () => {
+  return fetch(createUrl()).then((response) => response.json());
+};
+
+const createUrl = () => {
+  const randomId = Math.floor(Math.random() * 10000);
+  return `https://api.themoviedb.org/3/movie/${randomId}?api_key=4e370cf87047d952e72f249f236f6e94&language=es`;
 };
