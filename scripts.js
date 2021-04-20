@@ -1,6 +1,6 @@
-const createMovieObject = () => {
+const createMovie = () => {
   getMovies().then((movie) => {
-    movieObj = {
+    const movieObj = {
       poster: movie.poster_path,
       title: movie.title,
       year: movie.release_date,
@@ -11,7 +11,8 @@ const createMovieObject = () => {
 };
 
 const printMovieObj = (movieObj) => {
-  document.getElementById("output").innerHTML = `
+  const container = document.getElementById("output")
+  container.innerHTML = `
        <p>${movieObj.title}</p>
        <img src="https://image.tmdb.org/t/p/w185/${movieObj.poster}" alt="movie-poster"></img>
        <p class="year">${movieObj.country}. (${movieObj.year})</p>
