@@ -7,7 +7,16 @@ const createMovie = () => {
       country: movie.production_countries[0].name,
     };
     printMovieObj(movieObj);
+  })
+  .catch((error) => {
+    // Handle the error
+    const container = document.getElementById("output")
+  container.innerHTML = `
+    <p>${error}</p>
+    <p>intenta de nuevo 🔮 </p>`;
+    console.log(error);
   });
+  
 };
 
 const printMovieObj = (movieObj) => {
@@ -20,7 +29,14 @@ const printMovieObj = (movieObj) => {
 };
 
 const getMovies = () => {
-  return fetch(createUrl()).then((response) => response.json());
+  return fetch(createUrl()).then((response) => {
+    if (response.status >= 200 && response.status <= 299) {
+      return response.json();
+    } else {
+      throw Error(response.statusText);
+
+    }
+  })
 };
 
 const createUrl = () => {
